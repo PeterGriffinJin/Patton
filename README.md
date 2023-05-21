@@ -140,6 +140,8 @@ Please cite the following paper if you find the code helpful for your research.
 xxx
 ```
 
+## Acknowledge
+Some parts of our code are adapted from the [tevatron](https://github.com/texttron/tevatron) repository. Huge thanks to the contributors of the amazing repositories!
 
 ## Code base Structure
 ```
