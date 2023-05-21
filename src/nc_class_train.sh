@@ -19,9 +19,9 @@ CUDA_VISIBLE_DEVICES=0 python -m OpenLP.driver.train_class  \
     --tokenizer_name 'bert-base-uncased' \
     --model_type $MODEL_TYPE \
     --do_train  \
-    --save_steps 50  \
-    --eval_steps 50  \
-    --logging_steps 50 \
+    --save_steps 25  \
+    --eval_steps 25  \
+    --logging_steps 25 \
     --train_path $PROCESSED_DIR/train.jsonl  \
     --eval_path $PROCESSED_DIR/val.jsonl  \
     --class_num 16 \
@@ -46,9 +46,9 @@ CUDA_VISIBLE_DEVICES=0 python -m OpenLP.driver.train_class  \
 #     --tokenizer_name "allenai/scibert_scivocab_uncased" \
 #     --model_type $MODEL_TYPE \
 #     --do_train  \
-#     --save_steps 50  \
-#     --eval_steps 50  \
-#     --logging_steps 50 \
+#     --save_steps 25  \
+#     --eval_steps 25  \
+#     --logging_steps 25 \
 #     --train_path $PROCESSED_DIR/sci-pretrain/train.jsonl  \
 #     --eval_path $PROCESSED_DIR/sci-pretrain/val.jsonl  \
 #     --class_num 16 \

@@ -15,7 +15,7 @@ echo "start training..."
 
 # (bert-base)
 CUDA_VISIBLE_DEVICES=4 python -m OpenLP.driver.train_neg  \
-    --output_dir $CHECKPOINT_DIR/$MODEL_TYPE/$LR/attmap  \
+    --output_dir $CHECKPOINT_DIR/$MODEL_TYPE/$LR  \
     --model_name_or_path $MODEL_DIR  \
     --tokenizer_name 'bert-base-uncased' \
     --model_type $MODEL_TYPE \

@@ -1,8 +1,8 @@
 GENERAL_DOMAIN=amazon
 DOMAIN=sports
-PROCESSED_DIR=data_dir/$GENERAL_DOMAIN/$DOMAIN/also_bought
-LOG_DIR=logs/$DOMAIN/also_bought
-CHECKPOINT_DIR=ckpt/$DOMAIN/also_bought
+PROCESSED_DIR=data_dir/$GENERAL_DOMAIN/$DOMAIN/link_prediction
+LOG_DIR=logs/$DOMAIN/link_prediction
+CHECKPOINT_DIR=ckpt/$DOMAIN/link_prediction
 
 LR="1e-5"
 MODEL_TYPE=graphformer
