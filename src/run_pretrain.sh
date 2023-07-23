@@ -1,8 +1,9 @@
-GENERAL_DOMAIN=amazon
+PROJ_DIR=/shared/data/bowenj4/patton-data/Patton
+
 DOMAIN=sports
-PROCESSED_DIR=data_dir/$GENERAL_DOMAIN/$DOMAIN
-LOG_DIR=logs/$DOMAIN
-CHECKPOINT_DIR=ckpt/$DOMAIN
+PROCESSED_DIR=$PROJ_DIR/data/$DOMAIN
+LOG_DIR=$PROJ_DIR/logs/$DOMAIN
+CHECKPOINT_DIR=$PROJ_DIR/ckpt/$DOMAIN
 
 LR="1e-5"
 MODEL_TYPE=graphformer
@@ -12,8 +13,8 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3
 echo "start training..."
 
 python -m torch.distributed.launch --nproc_per_node=4 --master_port 19298 \
-    -m OpenLP.driver.train_with_mlm  \
-    --output_dir $CHECKPOINT_DIR/mask_mlm/$MODEL_TYPE/$LR  \
+    -m OpenLP.driver.patton_pretrain  \
+    --output_dir $CHECKPOINT_DIR/patton/$MODEL_TYPE/$LR  \
     --model_name_or_path "bert-base-uncased"  \
     --model_type $MODEL_TYPE \
     --do_train  \
@@ -28,7 +29,7 @@ python -m torch.distributed.launch --nproc_per_node=4 --master_port 19298 \
     --learning_rate $LR  \
     --max_len 32  \
     --num_train_epochs 10  \
-    --logging_dir $LOG_DIR/mask_mlm/$MODEL_TYPE/$LR  \
+    --logging_dir $LOG_DIR/patton/$MODEL_TYPE/$LR  \
     --evaluation_strategy steps \
     --remove_unused_columns False \
     --overwrite_output_dir True \

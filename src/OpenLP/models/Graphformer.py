@@ -449,8 +449,8 @@ class GraphFormers(BertPreTrainedModel):
         attention_mask[::(subgraph_node_num), 0] = 1.0  # only use the station for main nodes
 
         # Randomly mask the neighbor
-        neighbor_mask = (torch.cuda.FloatTensor(neighbor_mask.shape).uniform_() > self.neighbor_mask_ratio) * neighbor_mask
-        neighbor_mask[:,0] = 1
+        # neighbor_mask = (torch.cuda.FloatTensor(neighbor_mask.shape).uniform_() > self.neighbor_mask_ratio) * neighbor_mask
+        # neighbor_mask[:,0] = 1
 
         node_mask = (1.0 - neighbor_mask[:, None, None, :]) * -10000.0
         extended_attention_mask = (1.0 - attention_mask[:, None, None, :]) * -10000.0

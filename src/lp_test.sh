@@ -1,16 +1,13 @@
-GENERAL_DOMAIN=amazon
+PROJ_DIR=/shared/data/bowenj4/patton-data/Patton
+
 DOMAIN=sports
 STEP=600
 
 MODEL_TYPE=graphformer
 
-CHECKPOINT_DIR=ckpt/$DOMAIN/also_bought/$MODEL_TYPE/1e-5/checkpoint-$STEP
+CHECKPOINT_DIR=$PROJ_DIR/ckpt/$DOMAIN/link_prediction/$MODEL_TYPE/1e-5/checkpoint-$STEP
 
-TEST_DIR=data_dir/$GENERAL_DOMAIN/$DOMAIN/also_bought
-
-# export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
-# export CUDA_VISIBLE_DEVICES=1
-# export CUDA_VISIBLE_DEVICES=4,5,6,7
+TEST_DIR=$PROJ_DIR/data/$DOMAIN/link_prediction
 
 # run test
 echo "running test..."
@@ -21,8 +18,8 @@ CUDA_VISIBLE_DEVICES=2 python -m OpenLP.driver.test  \
     --tokenizer_name "bert-base-uncased" \
     --model_type $MODEL_TYPE \
     --do_eval  \
-    --train_path $TEST_DIR/test.10000.jsonl  \
-    --eval_path $TEST_DIR/test.10000.jsonl  \
+    --train_path $TEST_DIR/test.text.10000.jsonl  \
+    --eval_path $TEST_DIR/test.text.10000.jsonl  \
     --fp16  \
     --per_device_eval_batch_size 256 \
     --max_len 32  \

@@ -1,13 +1,14 @@
-GENERAL_DOMAIN=amazon
+PROJ_DIR=/shared/data/bowenj4/patton-data/Patton
+
 SOURCE_DOMAIN=sports
 
 MODEL_TYPE=graphformer
 
 STEP=300
 
-CHECKPOINT_DIR=ckpt/$SOURCE_DOMAIN/nc_class/$MODEL_TYPE/1e-5/checkpoint-$STEP
+CHECKPOINT_DIR=$PROJ_DIR/ckpt/$SOURCE_DOMAIN/nc_class/$MODEL_TYPE/1e-5/checkpoint-$STEP
 
-TEST_DIR=data_dir/$GENERAL_DOMAIN/$SOURCE_DOMAIN/nc-coarse/8_8
+TEST_DIR=$PROJ_DIR/data/$GENERAL_DOMAIN/$SOURCE_DOMAIN/nc-coarse/8_8
 
 # run test
 echo "running test..."

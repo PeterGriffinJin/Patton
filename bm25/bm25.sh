@@ -1,7 +1,7 @@
 domain=amazon
 dataset=sports
 
-# retrieval for all data samples
+# retrieval for all data samples (prepare hard negatives)
 python bm25.py --domain $domain --dataset $dataset --k 20 --mode all
 
 # # retrieval for test data samples

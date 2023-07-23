@@ -1,19 +1,20 @@
-GENERAL_DOMAIN=amazon
+PROJ_DIR=/shared/data/bowenj4/patton-data/Patton
+
 DOMAIN=sports
-PROCESSED_DIR=data_dir/$GENERAL_DOMAIN/$DOMAIN/nc
-LOG_DIR=logs/$DOMAIN/nc_retrieval
-CHECKPOINT_DIR=ckpt/$DOMAIN/nc_retrieval
+PROCESSED_DIR=$PROJ_DIR/data/$DOMAIN/nc
+LOG_DIR=$PROJ_DIR/logs/$DOMAIN/nc_retrieval
+CHECKPOINT_DIR=$PROJ_DIR/ckpt/$DOMAIN/nc_retrieval
 
 LR="1e-5"
 MODEL_TYPE=graphformer
 
-MODEL_DIR=ckpt/$DOMAIN/mask_mlm/$MODEL_TYPE/1e-5
+MODEL_DIR=$PROJ_DIR/pretrained_ckpt/$DOMAIN/patton
+# MODEL_DIR=$PROJ_DIR/pretrained_ckpt/$DOMAIN/scipatton
 
 echo "start training..."
 
-
 # (Patton)
-CUDA_VISIBLE_DEVICES=3 python -m OpenLP.driver.train_neg  \
+CUDA_VISIBLE_DEVICES=0 python -m OpenLP.driver.train_neg  \
     --output_dir $CHECKPOINT_DIR/$MODEL_TYPE/$LR  \
     --model_name_or_path $MODEL_DIR  \
     --tokenizer_name 'bert-base-uncased' \

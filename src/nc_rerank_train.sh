@@ -1,13 +1,15 @@
-GENERAL_DOMAIN=amazon
+PROJ_DIR=/shared/data/bowenj4/patton-data/Patton
+
 DOMAIN=sports
-PROCESSED_DIR=data_dir/$GENERAL_DOMAIN/$DOMAIN/nc
-LOG_DIR=logs/$DOMAIN/nc_rerank
-CHECKPOINT_DIR=ckpt/$DOMAIN/nc_rerank
+PROCESSED_DIR=$PROJ_DIR/data/$DOMAIN/nc
+LOG_DIR=$PROJ_DIR/logs/$DOMAIN/nc_rerank
+CHECKPOINT_DIR=$PROJ_DIR/ckpt/$DOMAIN/nc_rerank
 
 LR="1e-5"
 MODEL_TYPE=graphformer
 
-MODEL_DIR=ckpt/$DOMAIN/mask_mlm/$MODEL_TYPE/1e-5
+MODEL_DIR=$PROJ_DIR/pretrained_ckpt/$DOMAIN/patton
+# MODEL_DIR=$PROJ_DIR/pretrained_ckpt/$DOMAIN/scipatton
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 

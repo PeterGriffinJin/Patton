@@ -53,8 +53,6 @@ def calculate_metrics(evalpred: EvalPrediction):
 
     scores, labels = evalpred.predictions[-2], evalpred.predictions[-1]
 
-    # embed()
-
     predictions = np.argmax(scores, -1)
     prc = (np.sum((predictions == labels)) / labels.shape[0])
 
