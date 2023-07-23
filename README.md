@@ -5,12 +5,12 @@ This repository contains the source code and datasets for [Patton<img src="figur
 
 ## Links
 
-- [Requirements](#Requirements)
-- [Overview](#Overview)
-- [Datasets](#Datasets)
-- [Pretraining Patton](#Pretraining-Patton)
-- [Finetuning Patton](#Finetuning-Patton)
-- [Citations](#Citations)
+- [Requirements](#requirements)
+- [Overview](#overview)
+- [Datasets](#datasets)
+- [Pretraining Patton](#pretraining-patton)
+- [Finetuning Patton](#finetuning-patton)
+- [Citations](#citations)
 
 ## Requirements
 
