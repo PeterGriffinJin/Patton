@@ -28,7 +28,7 @@ pip3 install -r requirements.txt
 </p>
 
 ## Datasets
-**Download processed data.** To reproduce the results in our paper, you need to first download the processed [datasets](https://drive.google.com/file/d/1TM6fiZKsgF1WPW_2mwibegD4c8jv3coo/view?usp=drive_link). The extract the data files by
+**Download processed data.** To reproduce the results in our paper, you need to first download the processed [datasets](https://drive.google.com/drive/folders/1k0ISi6-vBwUQOioNMkHYe8cu-pzlg-3T?usp=sharing). The extract the data files by
 ```
 tar -xf data.tar.gz
 ```
