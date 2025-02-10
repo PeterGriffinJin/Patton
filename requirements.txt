@@ -7,3 +7,4 @@ scipy==1.10.1
 faiss-gpu==1.7.2
 tensorboard==2.12.1
 sentencepiece==0.1.97
+datasets==2.11.0
